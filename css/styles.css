@@ -94,9 +94,9 @@ header.scrolled{
 }
 .nav{display:flex;align-items:center;justify-content:space-between;height:74px}
 .brand{display:flex;align-items:center;gap:11px;font-family:var(--font-display);font-weight:800;font-size:20px;letter-spacing:-.04em}
-.brand .logo-full{height:30px;width:auto;display:block;transition:transform .4s var(--ease)}
+.brand .logo-full{height:44px;width:auto;display:block;transition:transform .4s var(--ease)}
 .brand:hover .logo-full{transform:translateY(-2px)}
-.foot-brand .logo-full{height:36px}
+.foot-brand .logo-full{height:52px}
 .nav-links{display:flex;align-items:center;gap:34px}
 .nav-links a{font-size:14.5px;font-weight:500;color:var(--ink-dim);transition:color .25s;position:relative}
 .nav-links a:hover{color:var(--ink)}
@@ -422,4 +422,27 @@ footer{border-top:1px solid var(--line);padding:70px 0 40px;background:var(--bg-
   .foot-brand{grid-column:span 2}
   .wrap{padding:0 20px}
   .sec-pad,.process,.stats{padding:70px 0}
+}
+
+/* ============================================================
+   PERFORMANCE (sem alterar os efeitos visuais)
+   ============================================================ */
+/* Pula a renderizacao/pintura das secoes fora da tela ate
+   elas se aproximarem do viewport — reduz muito o custo de layout. */
+.marquee-sec,.stats,.process,.sec-pad,.final,footer{
+  content-visibility:auto;
+  contain-intrinsic-size:auto 700px;
+}
+/* Dica de composicao para os elementos animados (camada propria na GPU) */
+.marquee,.hero-panel .bar,.wa-float,.chip{will-change:transform}
+
+/* Respeita usuarios que preferem menos movimento (acessibilidade + perf) */
+@media (prefers-reduced-motion: reduce){
+  *,*::before,*::after{
+    animation-duration:.001ms !important;
+    animation-iteration-count:1 !important;
+    transition-duration:.001ms !important;
+    scroll-behavior:auto !important;
+  }
+  .reveal{opacity:1 !important;transform:none !important}
 }

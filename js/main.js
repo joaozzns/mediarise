@@ -74,13 +74,19 @@ document.querySelectorAll('.faq-q').forEach(q => {
   });
 });
 
-/* ---------- Card spotlight ---------- */
+/* ---------- Card spotlight (throttle com requestAnimationFrame) ---------- */
 document.querySelectorAll('.card.interactive').forEach(card => {
+  let ticking = false;
   card.addEventListener('mousemove', (e) => {
-    const r = card.getBoundingClientRect();
-    card.style.setProperty('--mx', (e.clientX - r.left) + 'px');
-    card.style.setProperty('--my', (e.clientY - r.top) + 'px');
-  });
+    if (ticking) return;
+    ticking = true;
+    requestAnimationFrame(() => {
+      const r = card.getBoundingClientRect();
+      card.style.setProperty('--mx', (e.clientX - r.left) + 'px');
+      card.style.setProperty('--my', (e.clientY - r.top) + 'px');
+      ticking = false;
+    });
+  }, { passive: true });
 });
 
 /* ---------- Animate hero bars on load ---------- */
