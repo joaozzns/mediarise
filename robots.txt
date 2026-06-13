@@ -1,0 +1,7 @@
+User-agent: *
+Allow: /
+
+# Favicon e assets liberados para o Google rastrear
+Allow: /assets/
+
+Sitemap: https://agenciamediarise.com.br/sitemap.xml
