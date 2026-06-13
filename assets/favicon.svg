@@ -1,8 +1,10 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 120 120" fill="none" role="img" aria-label="MediaRise">
   <rect width="120" height="120" rx="26" fill="#0A0A0B"/>
-  <g transform="translate(12,12) scale(0.8)">
-    <path d="M16 100 L36 24 L60 70" stroke="#ECECE4" stroke-width="21" stroke-linecap="round" stroke-linejoin="round"/>
-    <path d="M60 70 L88 22 L104 100" stroke="#AEE635" stroke-width="21" stroke-linecap="round" stroke-linejoin="round"/>
-    <path d="M70 40 L88 18 L106 40" stroke="#AEE635" stroke-width="21" stroke-linecap="round" stroke-linejoin="round"/>
+  <g transform="translate(12,12) scale(0.96)">
+    <path d="M 16 88 L 16 26" stroke="#F5F5F2" stroke-width="15" stroke-linecap="round" fill="none"/>
+    <path d="M 18 28 L 50 62" stroke="#F5F5F2" stroke-width="15" stroke-linecap="round" fill="none"/>
+    <path d="M 46 70 L 72 37" stroke="#C8F250" stroke-width="15" stroke-linecap="round" fill="none"/>
+    <path d="M 80 44 L 80 88" stroke="#C8F250" stroke-width="15" stroke-linecap="round" fill="none"/>
+    <polygon points="62,24 90,12 87.5,42" fill="#C8F250"/>
   </g>
 </svg>
